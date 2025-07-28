@@ -4,7 +4,7 @@ import facemeshmodule as fmm
 import time
 
 cap = cv2.VideoCapture('sources/facemesh1.mp4')  
-    #cap = cv2.VideoCapture(0)  # Use webcam for real-time detection
+#cap = cv2.VideoCapture(0)  # Use webcam for real-time detection
 if not cap.isOpened():
     print("Error: Could not open video file.")
     exit()

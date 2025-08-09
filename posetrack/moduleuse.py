@@ -3,8 +3,8 @@ import mediapipe as mp
 import posemodule as pmt
 
 
-cap = cv2.VideoCapture('sources/posevid2.mp4')
-#cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture('sources/posevid2.mp4')
+cap = cv2.VideoCapture(0)
 detector = pmt.poseDetector()
 
 if not cap.isOpened():
@@ -20,8 +20,10 @@ while True:
     lmList = detector.findPosition(frame,draw=False)
 
     if len(lmList) !=0:
-        print(lmList[14])  
+        print(lmList[14],lmList[12],lmList[16])  
         cv2.circle(frame, (lmList[14][1], lmList[14][2]), 10, (100, 200, 255), cv2.FILLED)
+        cv2.circle(frame, (lmList[12][1], lmList[12][2]), 10, (100, 200, 255), cv2.FILLED)
+        cv2.circle(frame, (lmList[16][1], lmList[16][2]), 10, (100, 200, 255), cv2.FILLED)
     else:
         print("No landmarks detected or incomplete list.")
     cv2.imshow("Pose Detection", frame) 

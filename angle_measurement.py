@@ -35,12 +35,12 @@ while True:
 
     if len(lmList) !=0:
         print(lmList[22],lmList[16],lmList[20])  
-        cv2.circle(frame, (lmList[22][1], lmList[22][2]), 10, (100, 200, 255), cv2.FILLED)
+        cv2.circle(frame, (lmList[12][1], lmList[12][2]), 10, (100, 200, 255), cv2.FILLED)
+        cv2.circle(frame, (lmList[14][1], lmList[14][2]), 10, (100, 200, 255), cv2.FILLED)
         cv2.circle(frame, (lmList[16][1], lmList[16][2]), 10, (100, 200, 255), cv2.FILLED)
-        cv2.circle(frame, (lmList[20][1], lmList[20][2]), 10, (100, 200, 255), cv2.FILLED)
-        leftshoulder = [lmList[22][1], lmList[22][2]]
-        leftelbow = [lmList[16][1], lmList[16][2]]
-        leftwrist = [lmList[20][1], lmList[20][2]]
+        leftshoulder = [lmList[12][1], lmList[12][2]]
+        leftelbow = [lmList[14][1], lmList[14][2]]
+        leftwrist = [lmList[16][1], lmList[16][2]]
         angle = calculate_angle(leftshoulder, leftelbow, leftwrist)
         cv2.putText(frame, f'Angle: {int(angle)}', (20, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
     else:
